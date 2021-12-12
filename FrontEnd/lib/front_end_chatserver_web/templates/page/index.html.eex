@@ -1,0 +1,20 @@
+<section class="phx-hero">
+  <h1><%= gettext "<><( %{name} )><>", name: "ChatServer" %></h1>
+  <p>Distributed Applications</p>
+</section>
+
+<section>
+  <h4><b><u>Enkele nuttige test links: </u></b></h4>
+  <ul>
+    <li> <a href="http://www.localhost:4000/api/logs/full">Full Logs</a> | <a href="http://www.localhost:4000/api/logs/short">Short Logs</a> </li>
+    <li> <span><%= link "New Client", to: Routes.page_path(@conn, :new_client) %></span> </li>
+    <li> <span><%= link "New Chatroom", to: Routes.page_path(@conn, :new_chatroom) %></span> </li>
+    <li> <span><%= link "New Participate", to: Routes.page_path(@conn, :new_participate) %></span> </li>
+    <li> <span><%= link "New Send Message", to: Routes.page_path(@conn, :new_sendmessage) %></span> </li>
+    <li> <span><%= link "All Chatrooms", to: Routes.page_path(@conn, :overview_chatrooms) %></span> </li>
+    <li> <span><%= link "All Messages", to: Routes.page_path(@conn, :overview_messages) %></span> </li>
+
+    <li> ... </li>
+
+  </ul>
+</section>

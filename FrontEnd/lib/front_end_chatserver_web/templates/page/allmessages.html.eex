@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+
+    </head>
+    <script>
+            /*function retrieveChatrooms() {
+                url = "/api/get/all/chatrooms";
+
+                var xmlHttp = new XMLHttpRequest();
+                xmlHttp.open("GET", url, false);
+                xmlHttp.send(null);
+                console.log(xmlHttp.responseText);
+            }*/
+
+            function allMessages() {
+                const value = document.querySelector('input').value;
+                url = "/api/all/messages/" + value;;
+
+                var xmlHttp = new XMLHttpRequest();
+                xmlHttp.open("GET", url, false);
+                xmlHttp.send(null);
+                console.log(xmlHttp.responseText);
+
+                //setTimeout(() => { console.log("effe geduld"); }, 1000)
+
+                url = "/api/logs/full";
+                //Access-Control-Allow-Origin: *;
+                var request = new XMLHttpRequest();
+                //request.header('Access-Control-Allow-Origin', url)
+                request.open("GET", url, false);
+                request.send(null);
+                console.log(request.responseText);
+                result = request.responseText;
+                console.log(result);
+
+                beginStringList = result.split(`","`);
+                console.log(beginStringList[1]);
+                myRequest = beginStringList[1].split("[")[1].split("]")[0].split(",");
+
+                p = document.getElementById("requestelement");
+                p.innerHTML = myRequest
+
+
+    //"%{\"request\" => %{\"command\" => \"all_chatrooms\", \"unique_tag\" => \"#Reference<0.3416904476.4146069506.161053>\"}, \"result\" => \"Request is arived in backend\"}",
+    //"%{\"command\" => \"all_chatrooms\", \"data\" => [\"B\", \"E\", \"G\"],
+
+
+    //["%{\"request\" => %{\"chatroom_id\" => \"G\", \"command\" => \"create\", \"unique_tag\" => \"#Reference<0.3416904476.4146069506.155913>\"}, \"result\" => \"succeeded\"}",
+    //"%{\"request\" => %{\"chatroom_id\" => \"B\", \"command\" => \"create\", \"unique_tag\" => \"#Reference<0.3416904476.4146069505.158608>\"}, \"result\" => \"succeeded\"}",
+    //"%{\"request\" => %{\"chatroom_id\" => \"E\", \"command\" => \"create\", \"unique_tag\" => \"#Reference<0.3416904476.4146069506.151571>\"}, \"result\" => \"succeeded\"}"]
+
+
+            }
+        </script>
+    <body>
+
+        <p id="requestelement">Dummie</p>
+        <input id="name" type="text" name="name">
+        <button onclick="allMessages()">Send</button>
+        <!--<button onclick="retrieveChatrooms()">Retrieve</button>-->
+
+    </body>
+</html>

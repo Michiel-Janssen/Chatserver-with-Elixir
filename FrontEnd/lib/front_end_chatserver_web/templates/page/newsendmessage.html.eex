@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <script>
+            function sendFunction() {
+                const valueChatroom = document.getElementById('chatroom').value;
+                const valueClient = document.getElementById('client').value;
+                const valueSendMessage = document.getElementById('sendmessage').value;
+                window.location.href = "http://localhost:4000/api/sendmessage/" + valueChatroom + "/" + valueClient + "/" + valueSendMessage;
+            }
+        </script>
+
+    </head>
+    <body>
+        <h3>Chatroom</h3>
+        <input id="chatroom" type="text" name="chatroom">
+        <h3>Client</h3>
+        <input id="client" type="text" name="client">
+        <h3>Message</h3>
+        <input id="sendmessage" type="text" name="sendmessage">
+        <button onclick="sendFunction()">Send</button>
+    </body>
+</html>
